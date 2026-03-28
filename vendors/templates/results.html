@@ -1,0 +1,8 @@
+<h2>Duplicate Vendors</h2>
+
+{% for d in duplicates %}
+<p>{{ d.vendor1 }} ↔ {{ d.vendor2 }} ({{ d.score }})</p>
+{% endfor %}
+
+<h2>AI Report</h2>
+<p>{{ report }}</p>

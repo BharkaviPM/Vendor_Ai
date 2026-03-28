@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vendor Intelligence Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="flex justify-end gap-4 mb-4">
+    <a href="/upload" class="bg-blue-500 text-white px-4 py-2 rounded">Upload CSV</a>
+    <a href="/ask" class="bg-green-500 text-white px-4 py-2 rounded">Ask AI</a>
+</div>
+<div class="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded">
+    <b>AI Insight:</b><br>
+    {{ answer }}
+</div>
+
+<div class="max-w-7xl mx-auto p-6">
+
+    <h1 class="text-3xl font-bold mb-6 text-center">
+    Vendor Intelligence Dashboard
+    </h1>
+
+    <!-- SUMMARY CARDS -->
+    <div class="grid grid-cols-3 gap-4 mb-6">
+        <div class="bg-white p-4 rounded shadow text-center">
+            <h2 class="text-lg font-semibold">Total Duplicates</h2>
+            <p class="text-2xl text-red-500">{{ duplicates|length }}</p>
+        </div>
+
+        <div class="bg-white p-4 rounded shadow text-center">
+            <h2 class="text-lg font-semibold">Top Savings</h2>
+            <p class="text-2xl text-green-600">₹ {{ duplicates.0.savings }}</p>
+        </div>
+
+        <div class="bg-white p-4 rounded shadow text-center">
+            <h2 class="text-lg font-semibold">Optimization Score</h2>
+            <p class="text-2xl text-blue-600">85%</p>
+        </div>
+    </div>
+
+    <!-- TABLE -->
+    <div class="bg-white p-4 rounded shadow mb-6">
+        <h2 class="text-xl font-bold mb-4">Top Duplicate Vendors</h2>
+
+        <table class="w-full border">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="p-2">Vendor 1</th>
+                    <th class="p-2">Vendor 2</th>
+                    <th class="p-2">Score</th>
+                    <th class="p-2">Savings</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for d in duplicates %}
+                <tr class="text-center border-t">
+                    <td>{{ d.vendor1 }}</td>
+                    <td>{{ d.vendor2 }}</td>
+                    <td>{{ d.score }}</td>
+                    <td class="text-green-600 font-semibold">₹ {{ d.savings }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- CHART -->
+    <div class="bg-white p-4 rounded shadow mb-6 text-center">
+        <h2 class="text-xl font-bold mb-4"> Savings Visualization</h2>
+        <img src="/media/chart.png" class="mx-auto">
+    </div>
+
+    <!-- AI REPORT -->
+    <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-bold mb-4"> AI Executive Report</h2>
+        <pre class="whitespace-pre-wrap text-gray-700">{{ report }}</pre>
+    </div>
+
+</div>
+
+</body>
+</html>
