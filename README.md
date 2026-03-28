@@ -102,7 +102,7 @@ vendor_ai/
 
 ### 1. Clone Repository
 
-```bash
+
 git clone https://github.com/YOUR_USERNAME/Vendor_AI.git
 cd Vendor_AI
 2. Create Virtual Environment
@@ -139,7 +139,6 @@ Django Framework
 
 Run:
 
-```bash
 git add README.md
 git commit -m "Added professional README"
 git push origin main --force
