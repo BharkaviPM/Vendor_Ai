@@ -103,32 +103,39 @@ vendor_ai/
 ### 1. Clone Repository
 
 
-git clone https://github.com/YOUR_USERNAME/Vendor_AI.git
+git clone https://github.com/BharkaviPM/Vendor_AI.git
 cd Vendor_AI
-2. Create Virtual Environment
+
+### 2. Create Virtual Environment
 python -m venv venv
 venv\Scripts\activate
-3. Install Dependencies
+
+### 3. Install Dependencies
 pip install -r requirements.txt
-4. Run Server
+
+### 4. Run Server
 python manage.py runserver
-5. Open in Browser
+
+### 5. Open in Browser
 http://127.0.0.1:8000/
-📈 Innovation
+
+### 📈 Innovation
 Combines data analytics + AI + LLM
 Provides end-to-end enterprise workflow
 Enables interactive decision-making
 Uses local LLM (offline AI capability)
-🔮 Future Improvements
+
+### 🔮 Future Improvements
 Integration with real procurement systems
 Advanced ML models for anomaly detection
 Deployment on cloud (AWS/GCP)
 Real-time vendor monitoring
-👩‍💻 Author
+
+### 👩‍💻 Author
 
 Bharkavi PM
 
-⭐ Acknowledgements
+### ⭐ Acknowledgements
 HuggingFace Transformers
 RapidFuzz
 Django Framework
